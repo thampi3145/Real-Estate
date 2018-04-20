@@ -1,7 +1,26 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { reduxForm } from 'redux-form';
+import { createPost } from '../actions/index';
 
 
-const searchbox = () => {
+class Searchbox extends Component {
+    
+    static contextTypes = {
+          router: PropTypes.object
+      };
+      
+      onSubmit(props) {
+          this.props.createPost(props)
+                  .then((data) => {
+                      console.log("ddd",data.payload.data.question);
+                      this.context.router.history.push('/properties');
+          });
+          
+      }
+      
+  render () {  
+      const { fields: {location,sublocation},handleSubmit } = this.props;
+      
   return (
       <section id="search-box" className="wrap search-box">
         <div className="gsearch">
@@ -11,12 +30,12 @@ const searchbox = () => {
               <div className="gsearch-info-content">Instantly find your desired place from your own idea of location, at any price <br/> and other elements just by starting your search now</div>
             </div>
             <div className="gsearch-wrap">
-              <form className="gsearchform" method="get" role="search">
+              <form className="gsearchform" method="get" role="search" onSubmit = { handleSubmit(this.onSubmit.bind(this)) }>
                 <div className="gsearch-content">
                   <div className="gsearch-field">
                     <div className="form-group glocation">
                       <div className="label-select">
-                        <select className="form-control">
+                        <select className="form-control" {...location}>
                           <option>All Locations</option>
                           <option>New Jersey</option>
                           <option>New York</option>
@@ -26,7 +45,7 @@ const searchbox = () => {
 
                     <div className="form-group gsub-location">
                       <div className="label-select">
-                        <select className="form-control">
+                        <select className="form-control" {...sublocation}>
                           <option>All Sub-locations</option>
                           <option>Central New York</option>
                           <option>GreenVille</option>
@@ -103,7 +122,7 @@ const searchbox = () => {
 
                   <div className="gsearch-action">
                     <div className="gsubmit">
-                      <a className="btn btn-deault" href="#">Search Property</a>
+                      <button type="submit" className="btn btn-deault">Search Property</button>
                     </div>
                   </div>
                 </div>
@@ -113,6 +132,10 @@ const searchbox = () => {
         </div>
       </section>
   );
+  };
 };
 
-export default searchbox;
+export default reduxForm({
+        form: 'searchboxForm',
+        fields: ['location','sublocation']
+},null,{createPost})(Searchbox);
