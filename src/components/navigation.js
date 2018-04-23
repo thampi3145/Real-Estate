@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 const navigation = () => {
   return (
       <div className="main-nav-wrap container">
