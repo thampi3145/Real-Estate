@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 import Navigation from './navigation';
 import Searchbox from './searchbox';
+import Recentprop from './recent-prop';
+import Featuredprop from './featured-prop';
+import Ourservices from './ourservices';
+import Recentagents from './recent-agents';
+import Calltoaction from './call-to-action';
+import Testimonial from './testimonial';
+import Ourpartners from './our-partners';
+
 import { Carousel } from 'react-responsive-carousel';
 // general styles
 import 'style!css!react-responsive-carousel/lib/styles/main.css';
@@ -112,6 +120,21 @@ const slideshowhome = () => {
       </section>
      
       <Searchbox />
+
+      <Recentprop />
+
+      <Featuredprop />
+
+      <Ourservices />
+
+      <Recentagents />
+
+      <Calltoaction />
+
+      <Testimonial />
+
+      <Ourpartners />
+
   </div> 
   );
 };

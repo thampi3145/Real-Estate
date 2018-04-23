@@ -1,0 +1,5 @@
+.recent-properties .recent-properties-inner .recent-properties-content h2,
+.recent-agents .recent-agents-inner .recent-agents-content h2 {
+    border-top: 0;
+    padding-top: 0;
+}
