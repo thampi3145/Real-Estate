@@ -1,11 +1,33 @@
 import React, { Component } from 'react';
 import Navigation from './navigation';
 import Searchbox from './searchbox';
+import { Carousel } from 'react-responsive-carousel';
+// general styles
+import 'style!css!react-responsive-carousel/lib/styles/main.css';
+
+// carousel styles
+import 'style!css!react-responsive-carousel/lib/styles/carousel.css';
+
+
+
 
 
 const slideshowhome = () => {
   return (
+          
      <div className="noo-wrapper">
+     <Carousel showThumbs={false}>
+                <div>
+                    <img src="images/slideshow/bg-slide1.jpg" />
+                    <p className="legend">Legend 1</p>
+                </div>
+                <div>
+                    <img src="images/slideshow/bg-slide1.jpg" />
+                    <p className="legend">Legend 2</p>
+                </div>
+    
+      </Carousel>
+    
       <section id="slideshow-home" className="wrap noo-slideshow slideshow-home">
         <div className="property-slider">
           <div id="noo-slider-1" className="noo-slider noo-property-slide-wrap">
