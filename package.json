@@ -6,6 +6,7 @@
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "stop": "echo 'stop'",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js --recursive ./test",
     "test:watch": "npm run test -- --watch"
   },
@@ -30,6 +31,7 @@
     "babel-preset-stage-1": "^6.1.18",
     "bootstrap": "^4.1.0",
     "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
@@ -37,9 +39,12 @@
     "react-responsive-carousel": "^3.1.36",
     "react-router": "^4.0.0",
     "react-router-dom": "^4.2.2",
+    "react-slick-carousel": "^0.14.9",
     "redux": "^3.0.4",
     "redux-form": "^4.1.3",
     "redux-promise": "^0.5.3",
-    "style-loader": "^0.21.0"
+    "slick-carousel": "^1.8.1",
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1"
   }
 }

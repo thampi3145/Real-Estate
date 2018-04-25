@@ -8,24 +8,37 @@ import Recentagents from './recent-agents';
 import Calltoaction from './call-to-action';
 import Testimonial from './testimonial';
 import Ourpartners from './our-partners';
+import Slider from "react-slick-carousel";
 
-import { Carousel } from 'react-responsive-carousel';
 // general styles
-import 'style!css!react-responsive-carousel/lib/styles/main.css';
+import "slick-carousel/slick/slick.css";
 // carousel styles
-import 'style!css!react-responsive-carousel/lib/styles/carousel.css';
+import "slick-carousel/slick/slick-theme.css";
 
-const slideshowhome = () => {
+
+
+
+
+class Slideshowhome extends Component {
+  render () {
+      const settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1
+    };
   return (
     <div className="noo-wrapper">
+    
       <section id="slideshow-home" className="wrap noo-slideshow slideshow-home">
         <div className="property-slider">
           <div id="noo-slider-1" className="noo-slider noo-property-slide-wrap">
           <div className="caroufredsel_wrapper">
             <ul className="sliders">
-            
-              <Carousel showThumbs={false} infiniteLoop={true}>
-                <div className="slide-item noo-property-slide">
+         
+            <Slider>
+         <div className="slide-item noo-property-slide">
                   <img src="images/slideshow/bg-slide1.jpg" className="attachment-property-slider" alt="" />
                   <div className="slide-caption">
                     <div className="slide-caption-info">
@@ -110,9 +123,8 @@ const slideshowhome = () => {
                     <div className="slide-caption-action"><a href="property-details.html">More Details</a>
                     </div>
                   </div>
-                </div>
-              </Carousel>
-            
+                </div> 
+      </Slider>
             </ul>
             </div> 
           </div>
@@ -137,6 +149,7 @@ const slideshowhome = () => {
 
   </div> 
   );
+  };
 };
 
-export default slideshowhome;
+export default Slideshowhome;
