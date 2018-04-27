@@ -2,26 +2,20 @@ import React, { Component, PropTypes } from 'react';
 import { reduxForm } from 'redux-form';
 import { createPost } from '../actions/index';
 
-
 class Searchbox extends Component {
-    
-    static contextTypes = {
-          router: PropTypes.object
-      };
-      
-      onSubmit(props) {
-          this.props.createPost(props)
-                  .then((data) => {
-                      console.log("ddd",data.payload.data.question);
-                      this.context.router.history.push('/properties');
-          });
-          
-      }
-      
+  static contextTypes = {
+        router: PropTypes.object
+    };
+    onSubmit(props) {
+      this.props.createPost(props)
+          .then((data) => {
+            console.log("ddd",data.payload.data.question);
+            this.context.router.history.push('/properties');
+      });
+    }
   render () {  
-      const { fields: {location,sublocation},handleSubmit } = this.props;
-      
-  return (
+    const { fields: {location,sublocation},handleSubmit } = this.props;
+    return (
       <section id="search-box" className="wrap search-box">
         <div className="gsearch">
           <div className="container">
@@ -131,7 +125,7 @@ class Searchbox extends Component {
           </div>
         </div>
       </section>
-  );
+    );
   };
 };
 

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
-
 const home = () => {
   return (
     <div>
-  sfgfdgfdhg
+      sfgfdgfdhg
     </div>
   );
 };

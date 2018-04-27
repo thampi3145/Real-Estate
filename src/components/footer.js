@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 
-
 const footer = () => {
   return (
     <footer className="footer">
@@ -9,11 +8,11 @@ const footer = () => {
             <div className="row">
             <div className="col-xs-12 col-sm-6 col-md-3 footer-nav-col">
                 <div className="ft-about-us">
-                <h4 className="ft-col-title">CitiLights</h4>
-                <div className="text-block">
-                    <p>CitiLights brings wide range of choice, steadily updated property list and market trend for you to figure out your right decision.</p>
-                    <p>You are now at right place for your real estate research.</p>
-                </div>
+                    <h4 className="ft-col-title">CitiLights</h4>
+                    <div className="text-block">
+                        <p>CitiLights brings wide range of choice, steadily updated property list and market trend for you to figure out your right decision.</p>
+                        <p>You are now at right place for your real estate research.</p>
+                    </div>
                 </div>
             </div>
 
